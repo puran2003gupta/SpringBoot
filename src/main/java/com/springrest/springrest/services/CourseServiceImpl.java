@@ -40,10 +40,10 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public Course updateCourse(Course course) {
-			list.forEach(i->{
-			if(i.getId()==course.getId()) {
-				i.setTitle(course.getTitle());
-				i.setDescription(course.getDescription());
+			list.forEach(e->{
+			if(e.getId()==course.getId()) {
+				e.setTitle(course.getTitle());
+				e.setDescription(course.getDescription());
 			}
 			});
 		return course;
@@ -52,7 +52,7 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public void deleteCourse(long parseLong) {
 		 list = this.list.stream()
-		            .filter(i -> i.getId() != parseLong)
+		            .filter(e -> e.getId() != parseLong)
 		            .collect(Collectors.toList());
 		    
 	}

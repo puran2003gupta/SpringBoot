@@ -58,7 +58,7 @@ public class MyController {
 		try {
 			this.cs.deleteCourse(Long.parseLong(courseId));
 			return new ResponseEntity<>(HttpStatus.OK);	
-		}
+		}	
 		catch(Exception e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
