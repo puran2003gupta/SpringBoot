@@ -2,6 +2,7 @@ package com.springrest.springrest.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service; 
 import com.springrest.springrest.entities.Course;
@@ -37,7 +38,24 @@ public class CourseServiceImpl implements CourseService {
 		return course;
 	}
 
-	
+	@Override
+	public Course updateCourse(Course course) {
+			list.forEach(i->{
+			if(i.getId()==course.getId()) {
+				i.setTitle(course.getTitle());
+				i.setDescription(course.getDescription());
+			}
+			});
+		return course;
+	}
+
+	@Override
+	public void deleteCourse(long parseLong) {
+		 list = this.list.stream()
+		            .filter(i -> i.getId() != parseLong)
+		            .collect(Collectors.toList());
+		    
+	}
 	
 	}
 
