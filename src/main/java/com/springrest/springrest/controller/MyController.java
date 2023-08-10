@@ -65,5 +65,17 @@ public class MyController {
 		
 	}
 	
+
+
+	   
+
+	    @PostMapping("/courses")
+	    public Course createCourse(@RequestBody Course course) {
+	    	return this.cs.saveCourse(course);
+	        
+	    }
+	
+
+	
 	
 }

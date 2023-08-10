@@ -12,6 +12,10 @@ public interface CourseService {
 
 	public void deleteCourse(long parseLong);
 
+	public Course saveCourse(Course course);
+
+
+
 
 
 }
