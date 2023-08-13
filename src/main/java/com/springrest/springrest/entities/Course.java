@@ -10,10 +10,7 @@ public class Course {
 		this.title = title;
 		this.description = description;
 	}
-	public Course() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	public long getId() {
 		return id;
 	}

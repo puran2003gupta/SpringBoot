@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springrest.springrest.entities.Course;
 import com.springrest.springrest.services.CourseService;
 
+
 @RestController
+@RequestMapping("/api")
 public class MyController { 
 	@Autowired
 	private CourseService cs;
-	@GetMapping("/home")
-	public String home() {
-		return "this is home page";
-	}
+	
 	// get the courses
 	@GetMapping("/courses")
     public List<Course> getCourses()
@@ -69,11 +69,7 @@ public class MyController {
 
 	   
 
-	    @PostMapping("/courses")
-	    public Course createCourse(@RequestBody Course course) {
-	    	return this.cs.saveCourse(course);
-	        
-	    }
+	   
 	
 
 	
